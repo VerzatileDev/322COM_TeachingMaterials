@@ -1,0 +1,143 @@
+# Session 1 - Setting up the project and GitHub (optional)
+
+#### Table of Contents
+1. [Setting up in GitHub](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#setting-up-in-github)
+2. [Cloning the repository](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#cloning-the-repository)
+3. [Creating a C++ Project using Visual Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#creating-a-c-project-using-visual-studio)
+4. [Using OpenGL with the project](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#using-opengl-with-the-project)
+5. [Base Code](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#base-code)
+6. [Pushing the changes to the repository](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#pushing-the-changes-to-the-repository)
+7. [The power of the .gitignore file](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#the-power-of-the-gitignore-file)
+8. [Homework](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#Homework)
+
+Welcome to this 322COM tutorial series! 
+
+> By following these sessions, we will create the underlying areas needed for a 3D OpenGL game. 
+
+For this week's session, we will be setting up GitHub and starting the base C++ project. This will get us ready for the later weeks and become a start for your coursework.
+
+## Setting up in GitHub
+
+As you will know by reading the assessment brief, your coursework can be on the Coventry GitHub server. 
+
+Go onto the Coventry GitHub server via https://github.coventry.ac.uk and sign in via the top right. _This will be your normal username and password you use to log into university PCs._
+
+> **If you cannot sign into the server, please contact Ian to be sorted out.**
+
+![Sign in picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Sign%20in.PNG)
+ 
+Once you have logged into the server, 
+
+Click on + button to add new repository under your username. You are also welcome to use your own organization. 
+
+![Organizations picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/AddRepos.JPG)
+ 
+ Once there, create a new repository via the green _"New button"_.
+ 
+ * For the repository name, call it something obvious (and add your student ID) to the front.
+ * Set it to private (or everyone in the university can see it!).
+ * Initialize a README file.
+ 
+ By doing all of this, it means that the markers will be able to see it, that other students cannot and that you can clone it straight away to your PC.
+ 
+![Create a repository picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/CreateRepos.PNG)
+ 
+ Finally, add the module staff to your repository so they have access to it. (Our information can be found on the 212CR Aula page under _Module Essentials_.)
+ 
+ Go into your repository from the website, click "Settings", then "Collaborators", and then search for, and add, both members of module staff (YingLiang Ma (ac7020) and Ian) to the page. 
+ 
+ ![Add collaborators picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Add%20Collabs.png)
+ 
+  ## Cloning the repository
+  
+Once you have made your repository, it should take you to it's page. (If you have backed out of this, you can always find it by clicking on your profile picture and selecting _"Your repositories"_.)
+  
+The next step is to clone this repository to your PC so you have a local copy to do changes on.
+
+> For these tutorials, I will be using the command line (_cmd_) to use Git. You are allowed to use programs like GitHub Desktop (which can be accessed via AppsAnywhere) but if you come into problems with them, **staff might not be able to help**.
+
+To clone a respository you will need the URL of it. Copy this from the address bar of your browser or use the green _"Clone or download"_ button and copy the URL from the pop up box.
+
+![Cloning a repository picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Clone%20or%20Download.PNG)
+  
+  Open command line by typing cmd into Windows search. 
+  
+  Once there, you might have to navigate to your user area on the hard drive.
+  
+  The following cmd commands will be helpful to do this.
+  
+  Command     |  Explanation
+------------- | -------------
+C:            | Will change what hard drive disk is currently looked at.
+cd "folder name" | Go into that directory / folder.
+cd .. | Go back a directory / folder.
+dir      | Print out what is in the directory.
+mkdir "name for directory" | Create that directory / folder.
+git clone "url" | Clones the repository into the current directory you are at.
+
+![cmd steps picture](https://github.coventry.ac.uk/217CR-1920JANMAY/Teaching-Material/blob/master/Session%201/Readme%20Pictures/cmd%20steps.PNG)
+
+> _These are the steps I took to get to my Documents folder for example._
+
+**Make sure you are at a sensible place directory wise before you clone your repository so you can find it later!**
+
+Once at a good directory, git clone your repository. It might ask you to log in with your GitHub credentials. 
+
+When you have submitted them, the repository (and it's files) should now be on your PC.
+
+At the moment, it should only be the README file.
+  
+![cloned picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Cloned.PNG)
+
+It is here that we will create a C++ project so it is in the GitHub repository, meaning we can push and pull changes to it.
+
+## Creating a C++ Project using Visual Studio
+ 
+> If you are not using Visual Studio 2019
+
+* Open Visual Studio and Click _"File"_ -> _"New"_ -> _"Project.."_
+* Select _"Empty Project"_.
+* Make sure _"Create directory for solution"_ is unticked.
+* Give it a sensible name.
+* Make sure the location is the same as where the README file is stored.
+
+> If you are using Visual Studio 2019, click "Continue without code".
+
+* Click _"File"_ -> _"New"_ -> _"Project.."_
+* Pick _"C++"_ as the Language to filter the list.
+* Select _"Empty Project"_ and then _"Next"_.
+* Give it a sensible name.
+* Make sure _"Place solution and project in the same directory"_ is ticked.
+* Make sure the location is the same as where the README file is stored.
+
+Once this has been done, click _"Create"_.
+
+![empty project picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Empty%20Project.PNG)
+
+![empty project picture 2](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/CreateProject1.PNG)
+
+We need to create the _.cpp_ file that will hold the _main()_ function. Remember, every C++ program needs a _main()_ function to run.
+
+This can be done by right clicking "Source Files" on the right hand side (in the Solution Explorer) and clicking _"Add"_ -> _"New Item..."_.
+
+Make sure C++ File (_.cpp_) is highlighted and either change the name (I always use _main.cpp_) or keep it as _Source.cpp_ and click _"Add"_ in the bottom right.
+
+![add file picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/AddFile.png)
+
+
+Type in the following code to get us started and make sure it all works. Once you have typed it in, click _"Local Windows Debugger"_ (or hit _"F5"_) at the top middle of the screen to compile and run the code.
+
+```C++
+#include <iostream>
+
+int main(int argc, char** argv)
+{
+	std::cout << "Hello world!" << std::endl;
+	return 0;
+}
+```
+
+That should pop up a console window with _"Hello world!"_ in it.
+
+## Using OpenGL with the project
+
