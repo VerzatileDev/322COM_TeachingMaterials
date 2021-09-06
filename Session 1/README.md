@@ -4,11 +4,10 @@
 1. [Setting up in GitHub](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#setting-up-in-github)
 2. [Cloning the repository](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#cloning-the-repository)
 3. [Creating a C++ Project using Visual Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#creating-a-c-project-using-visual-studio)
-4. [Using OpenGL with the project](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#using-opengl-with-the-project)
-5. [Base Code](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#base-code)
-6. [Pushing the changes to the repository](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#pushing-the-changes-to-the-repository)
-7. [The power of the .gitignore file](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#the-power-of-the-gitignore-file)
-8. [Homework](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#Homework)
+4. [Base Code](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#base-code)
+5. [Pushing the changes to the repository](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#pushing-the-changes-to-the-repository)
+6. [The power of the .gitignore file](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#the-power-of-the-gitignore-file)
+7. [Homework](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#Homework)
 
 Welcome to this 322COM tutorial series! 
 
@@ -87,7 +86,7 @@ When you have submitted them, the repository (and it's files) should now be on y
 
 At the moment, it should only be the README file.
   
-![cloned picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Cloned.PNG)
+![cloned picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Cloned.PNG)
 
 It is here that we will create a C++ project so it is in the GitHub repository, meaning we can push and pull changes to it.
 
@@ -112,7 +111,7 @@ It is here that we will create a C++ project so it is in the GitHub repository, 
 
 Once this has been done, click _"Create"_.
 
-![empty project picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Empty%20Project.PNG)
+![empty project picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/ColorRay.JPG)
 
 
 We need to create the _.cpp_ file that will hold the _main()_ function. Remember, every C++ program needs a _main()_ function to run.
@@ -121,9 +120,16 @@ This can be done by right clicking "Source Files" on the right hand side (in the
 
 Make sure C++ File (_.cpp_) is highlighted and either change the name (I always use _main.cpp_) or keep it as _Source.cpp_ and click _"Add"_ in the bottom right.
 
-![add file picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/AddFile.png)
 
+## Base Code
 
+This week, we will just add some base codes.The base codes are the first step in ray casting: constructing rays
+from the camera that pass through each pixel and when completed should look something similar to
+this. 
 
-## Using OpenGL with the project
+![color ray picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Empty%20Project.PNG)
+
+Copy all the code from the _"BaseCode.cpp"_ which is on the Week 1 GitHub page and paste it over everything in your _"main.cpp"_.
+
+Run the code to get the following scene.
 
