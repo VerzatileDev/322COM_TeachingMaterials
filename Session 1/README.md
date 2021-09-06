@@ -12,7 +12,7 @@
 
 Welcome to this 322COM tutorial series! 
 
-> By following these sessions, we will create the underlying areas needed for a 3D OpenGL game. 
+> Session 1 and 2 are instructions for using Github (basic commands). If you are familiar with Github or you do not want to use github. You can go straight to section 3.
 
 For this week's session, we will be setting up GitHub and starting the base C++ project. This will get us ready for the later weeks and become a start for your coursework.
 
@@ -114,7 +114,6 @@ Once this has been done, click _"Create"_.
 
 ![empty project picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Empty%20Project.PNG)
 
-![empty project picture 2](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/CreateProject1.PNG)
 
 We need to create the _.cpp_ file that will hold the _main()_ function. Remember, every C++ program needs a _main()_ function to run.
 
@@ -125,19 +124,6 @@ Make sure C++ File (_.cpp_) is highlighted and either change the name (I always 
 ![add file picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/AddFile.png)
 
 
-Type in the following code to get us started and make sure it all works. Once you have typed it in, click _"Local Windows Debugger"_ (or hit _"F5"_) at the top middle of the screen to compile and run the code.
-
-```C++
-#include <iostream>
-
-int main(int argc, char** argv)
-{
-	std::cout << "Hello world!" << std::endl;
-	return 0;
-}
-```
-
-That should pop up a console window with _"Hello world!"_ in it.
 
 ## Using OpenGL with the project
 
