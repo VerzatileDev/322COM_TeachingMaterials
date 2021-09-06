@@ -111,8 +111,7 @@ It is here that we will create a C++ project so it is in the GitHub repository, 
 
 Once this has been done, click _"Create"_.
 
-![empty project picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/ColorRay.JPG)
-
+![color ray picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Empty%20Project.PNG)
 
 We need to create the _.cpp_ file that will hold the _main()_ function. Remember, every C++ program needs a _main()_ function to run.
 
@@ -127,7 +126,7 @@ This week, we will just add some base codes.The base codes are the first step in
 from the camera that pass through each pixel and when completed should look something similar to
 this. 
 
-![color ray picture](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Empty%20Project.PNG)
+![empty project picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/ColorRay.JPG)
 
 Copy all the code from the _"BaseCode.cpp"_ which is on the Week 1 GitHub page and paste it over everything in your _"main.cpp"_.
 
