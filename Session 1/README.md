@@ -5,7 +5,7 @@
 2. [Cloning the repository](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#cloning-the-repository)
 3. [Creating a C++ Project using Visual Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#creating-a-c-project-using-visual-studio)
 4. [Base Code](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#base-code)
-5. [Pushing the changes to the repository](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#pushing-the-changes-to-the-repository)
+5. [Add GLM library](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#Add-GLM-library)
 6. [The power of the .gitignore file](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#the-power-of-the-gitignore-file)
 7. [Homework](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#Homework)
 
@@ -21,7 +21,7 @@ As you will know by reading the assessment brief, your coursework can be on the 
 
 Go onto the Coventry GitHub server via https://github.coventry.ac.uk and sign in via the top right. _This will be your normal username and password you use to log into university PCs._
 
-> **If you cannot sign into the server, please contact Ian to be sorted out.**
+
 
 ![Sign in picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Sign%20in.PNG)
  
@@ -122,7 +122,7 @@ Make sure C++ File (_.cpp_) is highlighted and either change the name (I always 
 
 ## Base Code
 
-This week, we will just add some base codes.The base codes are the first step in ray casting: constructing rays
+We will just add some base codes.The base codes are the first step in ray casting: constructing rays
 from the camera that pass through each pixel and when completed should look something similar to
 this. 
 
@@ -130,5 +130,13 @@ this.
 
 Copy all the code from the _"BaseCode.cpp"_ which is on the Week 1 GitHub page and paste it over everything in your _"main.cpp"_.
 
+If you want to find out how codes work. Please refer to _"Workshop 1A Instructions.pdf"_.
 
+The program does not display anything, instead it generate a PPM image file. It can be opened using Photoshop.
+
+## Add GLM library
+
+This week, we will just add some base codes.The base codes are the first step in ray casting: constructing rays
+from the camera that pass through each pixel and when completed should look something similar to
+this. 
 
