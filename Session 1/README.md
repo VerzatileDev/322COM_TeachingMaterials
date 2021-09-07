@@ -1,4 +1,4 @@
-# Session 1 - Setting up the project and GitHub (optional)
+# Session 1 - Setting up the project and GitHub
 
 #### Table of Contents
 1. [Setting up in GitHub](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#setting-up-in-github)
@@ -6,8 +6,8 @@
 3. [Creating a C++ Project using Visual Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#creating-a-c-project-using-visual-studio)
 4. [Base Code](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#base-code)
 5. [Add GLM library](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#Add-GLM-library)
-6. [The power of the .gitignore file](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#the-power-of-the-gitignore-file)
-7. [Homework](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#Homework)
+6. [Add Spheres](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#Add-Spheres)
+
 
 Welcome to this 322COM tutorial series! 
 
@@ -138,5 +138,18 @@ The program does not display anything, instead it generate a PPM image file. It 
 
 Doownload _"glm_0.9.9.8.zip"_ which is on the Week 1 GitHub page. GLM is a header-file only library. So, it will be added in C/C++ section 
 in project property pages. The path refer to the library should be relative (.\glm-0.9.9.8). Make sure that you unzip the library zip inside your project folder.
+Now, you compile the project and generate an executable file.
+
+## Add Spheres
+This section is based on rendering 3D spheres using the Ray Casting algorithm and when
+completed should look something similar to this:
+
+![empty project picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Spheres.JPG)
+
+First you need to create primitives to populate the world. In this workshop you will render
+spheres so you will need to create a Sphere class and add some test spheres to your world. The
+Sphere class should contain the position of the centre of the sphere and its radius as well as its
+surface colour. Feel free to create your own colours, sizes and positions of spheres but they won’t
+appear until you have completed the next step.
  
 
