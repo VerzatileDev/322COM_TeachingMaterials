@@ -1,180 +1,22 @@
 # Session 3 - Interactive Ray Tracing
 
 #### Table of Contents
-1. [Sphere Ray Casting Solution](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Sphere-Ray-Casting-Solution)
-2. [Redesign data class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Redesign-data-class)
-3. [Add triangle class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Add-triangle-class)
-4. [Rendering complex shape](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Rendering-complex-shape)
-5. [Example of mesh class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Example-of-mesh-class)
+1. [Add screen display using SDL2 Library](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Add-screen-display-using-SDL2-Library)
+2. [Redesign data class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Redesign-data-class)
+3. [Add triangle class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Add-triangle-class)
+4. [Rendering complex shape](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Rendering-complex-shape)
+5. [Example of mesh class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Example-of-mesh-class)
 
 
-## Sphere Ray Casting Solution
+## Add screen display using SDL2 Library
 
-If you have trouble to implement sphere ray intersection. Here is the function codes.
+Simple DirectMedia Layer (SDL2) is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. 
 
-```C++
-//center is the sphere center position
-//orig is the origin of the ray. You set it up as (0,0,0)
-//dir is the direction of the ray
-//t is the return parameter value of intersection. Range from [0,1]
-bool intersectSphere(vec3 center, vec3 orig, vec3 dir, float radius, float &t)
-{
-	float t0, t1; // solutions for t if the ray intersects 
+SDL officially supports Windows, Mac OS X, Linux, iOS, and Android.
 
-	// geometric solution  // vector dir has to be normalize, length is 1.0
-	vec3 L = center - orig;
-	float tca = dot(L, dir);
-	if (tca < 0) return false;
-	float d = dot(L,L) - tca * tca;
-	if (d > (radius*radius)) return false;
+An example of screen display is provide in _"SDLPixel.cpp"_.
 
-	float thc = sqrt(radius*radius - d);
-	t0 = tca - thc;
-	t1 = tca + thc;
-
-	if (t0 > t1) std::swap(t0, t1);
-
-	if (t0 < 0) {
-		t0 = t1; // if t0 is negative, let's use t1 instead 
-		if (t0 < 0) return false; // both t0 and t1 are negative 
-	}
-
-	t = t0;
-	return true;
-}
-```
-
-A simple sphere class (header file):
-```C++
-#pragma once
-#include <glm/glm.hpp>
-
-using namespace glm;
-
-class Sphere
-{
-private:
-	float radius;
-	vec3  center;
-	vec3 mycolor;
-public:
-	Sphere(float,vec3,vec3);
-	~Sphere();
-	float getRadius(void);
-	vec3 getCenter(void);
-	vec3 getMyColor(void);
-};
-```
-
-CPP file for the sphere class
-```C++
-#include "stdafx.h"
-#include "sphere.h"
-
-Sphere::Sphere(float r, vec3 cen, vec3 col) {
-	radius = r;
-	center = cen;
-	mycolor = col;
-}
-
-Sphere::~Sphere()
-{
-}
-
-float Sphere::getRadius(void)
-{
-	return radius;
-}
-
-vec3 Sphere::getCenter(void)
-{
-	return center;
-}
-
-vec3 Sphere::getMyColor(void)
-{
-	return mycolor;
-}
-```
-
-Intersection points order sorting codes. So, the closest sphere will display the full sphere. 
-
-```C++
-	vector<float> t_arr;
-	vector<vec3> color_arr;
-	
-    for (int y = 0; y < HEIGHT; ++y)
-	{
-		for (int x = 0; x < WIDTH; ++x)
-		{
-			t_arr.clear();
-			color_arr.clear();
-
-			PixelNdx = (x + 0.5) / (float)WIDTH;
-			PixelNdy = (y + 0.5) / (float)HEIGHT;
-			PixelRdx = 2 * PixelNdx - 1.0;
-			PixelRdy = 1.0 - 2 * PixelNdy;
-			PixelRdx = PixelRdx * Iar;
-
-			PCameraX = PixelRdx*tanvalue;
-			PCameraY = PixelRdy*tanvalue;
-
-			ttvec.x = PCameraX;
-			ttvec.y = PCameraY;
-			ttvec.z = -1.0;
-			//dir need to be normalized
-			dir = normalize(ttvec);
-
-			org.x = 0.0; org.y = 0.0; org.z = 0.0;
-			Intersection = intersectSphere(redsphere.getCenter(), org, dir, redsphere.getRadius(), t);
-			if (Intersection)
-			{
-				t_arr.push_back(t);
-				color_arr.push_back(redsphere.getMyColor());
-			}
-
-			Intersection = intersectSphere(yellowsphere.getCenter(), org, dir, yellowsphere.getRadius(), t);
-			if (Intersection)
-			{
-				t_arr.push_back(t);
-				color_arr.push_back(yellowsphere.getMyColor());
-			}
-
-			Intersection = intersectSphere(bluesphere.getCenter(), org, dir, bluesphere.getRadius(), t);
-			if (Intersection)
-			{
-				t_arr.push_back(t);
-				color_arr.push_back(bluesphere.getMyColor());
-			}
-
-			Intersection = intersectSphere(greyphere.getCenter(), org, dir, greyphere.getRadius(), t);
-			if (Intersection)
-			{
-				t_arr.push_back(t);
-				color_arr.push_back(greyphere.getMyColor());
-			}
-
-			if (t_arr.size() == 0)
-			{
-				image[x][y].x = 1.0;
-				image[x][y].y = 1.0;
-				image[x][y].z = 1.0;
-			}
-			else
-			{
-				min_t = 1000.0;
-				whichone = 0;
-				for (i = 0; i < t_arr.size(); i++)
-				{
-					if (t_arr[i] < min_t) { whichone = i; min_t = t_arr[i]; }
-				}
-				image[x][y].x = color_arr[whichone].x;
-				image[x][y].y = color_arr[whichone].y;
-				image[x][y].z = color_arr[whichone].z;
-			}
-		}
-	}
-```
+The function PutPixel32_nolock ouput color into computer screen. You need to create a Uint32 color object using convertColour() function.
 
  
 ## Redesign data class
