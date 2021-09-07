@@ -152,4 +152,8 @@ Sphere class should contain the position of the centre of the sphere and its rad
 surface colour. Feel free to create your own colours, sizes and positions of spheres but they won’t
 appear until you have completed the next step.
  
-
+Here is an example scene, based on the screenshot above:
+* Red sphere: Position (0, 0, -20), Radius (4), Colour (1.00, 0.32, 0.36)
+* Yellow sphere: Position (5, -1, -15), Radius (2), Colour (0.90, 0.76, 0.46)
+* Light blue sphere: Position (5, 0, -25), Radius (3), Colour (0.65, 0.77, 0.97)
+* Light grey sphere: Position (-5.5, 0, -15), Radius (3), Colour (0.90, 0.90, 0.90)
