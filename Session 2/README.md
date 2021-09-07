@@ -1,4 +1,4 @@
-# Session 1 - Setting up the project and GitHub
+# Session 2 - Ray Casting
 
 #### Table of Contents
 1. [Sphere Ray Casting Solution](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#setting-up-in-github)
