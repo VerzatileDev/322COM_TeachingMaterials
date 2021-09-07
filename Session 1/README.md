@@ -130,5 +130,5 @@ this.
 
 Copy all the code from the _"BaseCode.cpp"_ which is on the Week 1 GitHub page and paste it over everything in your _"main.cpp"_.
 
-Run the code to get the following scene.
+
 
