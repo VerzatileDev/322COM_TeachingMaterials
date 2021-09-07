@@ -1,4 +1,4 @@
-# Session 2 - Ray Casting
+# Session 3 - Interactive Ray Tracing
 
 #### Table of Contents
 1. [Sphere Ray Casting Solution](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Sphere-Ray-Casting-Solution)
@@ -302,7 +302,7 @@ bool triangle::intersection(vec3 rayDirection, vec3 rayOrigin, float &t, vec3 &I
 	{
 		IntPt = rayOrigin + t * rayDirection;
 		normVec = glm::normalize(w * norm0 + u * norm1 + v * norm2);
-	
+		//normVec = norm0;
 		t = dot(v0v2, cross((rayOrigin - vertex0), v0v1)) / dot(v0v1, cross(rayDirection, v0v2));
 		return true;
 	}
