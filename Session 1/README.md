@@ -92,8 +92,6 @@ It is here that we will create a C++ project so it is in the GitHub repository, 
 
 ### Pushing the changes to the repository
 
-We return to using Git now to save our progress on the project. Once you have everything working without errors, we will push our changes to the project (and to the repository) to the GitHub server.
-
 We do this via 3 commands (which you should be used to from ALL!):
 
 Git commands  | 
