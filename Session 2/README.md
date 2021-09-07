@@ -4,7 +4,7 @@
 1. [Sphere Ray Casting Solution](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Sphere-Ray-Casting-Solution)
 2. [Redesign data class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Redesign-data-class)
 3. [Add triangle classl Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Add-triangle-class)
-4. [Base Code](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#base-code)
+4. [Rendering complex shape](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Rendering-complex-shape)
 
 
 ## Sphere Ray Casting Solution
@@ -204,6 +204,20 @@ more details). Add a triangle to a scene and test that it appears correctly.
 ![Triangle picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202/Readme%20Pictures/Triangle.jpg)
 
 Triangle with vertices: (0, 1, -2), (-1.9, -1, -2), (1.6, -0.5, -2)
+
+## Rendering complex shape
+
+This section is advanced level so it is optional. 
+To render more complex shapes e.g. teapot you will need to be able to load a mesh from a file and
+render each of its triangles. A simple mesh loader (OBJloader.h) written in C++ can be downloaded from Week 2 folder.
+Note this code is limited to only loading meshes of file type OBJ. 
+
+The mesh loader handle the import of OBJ file is inside the header file : OBJloader.h.
+This is a head file only library. It is a simplified version of Bly7 OBJ Loader library ( https://github.com/Bly7/OBJ-Loader  ).
+
+
+Examples of a cube and a teapot OBJ files can also be downloaded from week 2.
+
 
 
 
