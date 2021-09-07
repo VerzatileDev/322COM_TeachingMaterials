@@ -278,6 +278,33 @@ public:
 };
 ```
 
+An example of triangle interection implementation (Moller-Trumbore method).
+The method is explained in https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-rendering-a-triangle/moller-trumbore-ray-triangle-intersection
 
+```C++
+bool triangle::intersection(vec3 rayDirection, vec3 rayOrigin, float &t, vec3 &IntPt, vec3 &normVec)
+{
+	//Moller-Trumbore
 
+	vec3 v0v1 = vertex1 - vertex0;
+	vec3 v0v2 = vertex2 - vertex0;
 
+	float u = (dot((rayOrigin - vertex0), (cross(rayDirection, v0v2)))) / dot(v0v1, cross(rayDirection, v0v2));
+	float v = (dot(rayDirection, cross(rayOrigin - vertex0, v0v1))) / dot(v0v1, cross(rayDirection, v0v2));
+
+	float w = 1 - u - v;
+
+	if (u < 0 || u > 1)
+		return false;
+	else if (v < 0 || (u + v) > 1)
+		return false;
+	else
+	{
+		IntPt = rayOrigin + t * rayDirection;
+		normVec = glm::normalize(w * norm0 + u * norm1 + v * norm2);
+		//normVec = norm0;
+		t = dot(v0v2, cross((rayOrigin - vertex0), v0v1)) / dot(v0v1, cross(rayDirection, v0v2));
+		return true;
+	}
+}
+```
