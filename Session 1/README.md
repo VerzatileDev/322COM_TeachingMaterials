@@ -1,4 +1,4 @@
-# Session 1 - Setting up the project and GitHub
+# Session 1 - Setting up the project and Sphere ray casting
 
 #### Table of Contents
 1. [Setting up in GitHub](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#setting-up-in-github)
@@ -89,6 +89,18 @@ At the moment, it should only be the README file.
 ![cloned picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Cloned.PNG)
 
 It is here that we will create a C++ project so it is in the GitHub repository, meaning we can push and pull changes to it.
+
+### Pushing the changes to the repository
+
+We return to using Git now to save our progress on the project. Once you have everything working without errors, we will push our changes to the project (and to the repository) to the GitHub server.
+
+We do this via 3 commands (which you should be used to from ALL!):
+
+Git commands  | 
+------------- | 
+git add . | 
+git commit -m "some kind of message" | 
+git push | 
 
 ## Creating a C++ Project using Visual Studio
  
