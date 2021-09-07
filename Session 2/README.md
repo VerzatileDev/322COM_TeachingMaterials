@@ -3,7 +3,7 @@
 #### Table of Contents
 1. [Sphere Ray Casting Solution](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Sphere-Ray-Casting-Solution)
 2. [Redesign data class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Redesign-data-class)
-3. [Add triangle classl Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Add-triangle-class)
+3. [Add triangle class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Add-triangle-class)
 4. [Rendering complex shape](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Rendering-complex-shape)
 
 
