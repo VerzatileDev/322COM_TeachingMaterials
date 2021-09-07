@@ -5,7 +5,7 @@
 2. [Cloning the repository](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#cloning-the-repository)
 3. [Creating a C++ Project using Visual Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#creating-a-c-project-using-visual-studio)
 4. [Base Code](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#base-code)
-5. [Add GLM library](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#Add-GLM-library)
+5. [Add GLM library](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#Add-GLM-library)
 6. [The power of the .gitignore file](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#the-power-of-the-gitignore-file)
 7. [Homework](https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/blob/master/Session%201#Homework)
 
@@ -136,7 +136,7 @@ The program does not display anything, instead it generate a PPM image file. It 
 
 ## Add GLM library
 
-This week, we will just add some base codes.The base codes are the first step in ray casting: constructing rays
-from the camera that pass through each pixel and when completed should look something similar to
-this. 
+Doownload _"glm_0.9.9.8.zip"_ which is on the Week 1 GitHub page. GLM is a header-file only library. So, it will be added in C/C++ section 
+in project property pages. The path refer to the library should be relative (.\glm-0.9.9.8). Make sure that you unzip the library zip inside your project folder.
+ 
 
