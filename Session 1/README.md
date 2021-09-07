@@ -157,3 +157,15 @@ Here is an example scene, based on the screenshot above:
 * Yellow sphere: Position (5, -1, -15), Radius (2), Colour (0.90, 0.76, 0.46)
 * Light blue sphere: Position (5, 0, -25), Radius (3), Colour (0.65, 0.77, 0.97)
 * Light grey sphere: Position (-5.5, 0, -15), Radius (3), Colour (0.90, 0.90, 0.90)
+
+Notice that even though the light blue and light grey sphere are the same size the light grey sphere
+appears much larger as it is nearer to the camera.
+
+Even the floor can be created by a very large sphere:
+* Dark grey sphere: Position (0, -10004, -20), Radius (10000), Colour (0.2, 0.2, 0.2)
+
+### Next Step
+Find intersections between the ray and spheres. Add a method for ray-sphere intersection to
+your Sphere class (see lecture slide on geometric solution for more details). If the ray hits a sphere,
+return true, else return false.
+
