@@ -5,6 +5,7 @@
 2. [Redesign data class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Redesign-data-class)
 3. [Add triangle class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Add-triangle-class)
 4. [Rendering complex shape](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Rendering-complex-shape)
+5. [Example of mesh class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Example-of-mesh-class)
 
 
 ## Sphere Ray Casting Solution
@@ -215,9 +216,67 @@ Note this code is limited to only loading meshes of file type OBJ.
 The mesh loader handle the import of OBJ file is inside the header file : OBJloader.h.
 This is a head file only library. It is a simplified version of Bly7 OBJ Loader library ( https://github.com/Bly7/OBJ-Loader  ).
 
-
 Examples of a cube and a teapot OBJ files can also be downloaded from week 2.
 
+## Example of mesh class
+
+This section is advanced level so it is optional.
+
+An example of abstract shape class
+ ```C++
+#pragma once
+#include "glm/glm/glm.hpp"
+
+using namespace glm;
+
+class shape
+{
+private:
+	vec3 center;
+	vec3 diffuseColor; 
+	vec3 diffuseItensity; 
+
+public:
+	shape();
+	virtual bool intersection(vec3 rayDirection, vec3 rayOrigin, float& t, vec3& IntPt, vec3& normVec);
+	
+	//for future ray tracing
+	virtual void ComputeColor(const float ambientIntensity, const vec3 IntPt, const vec3 lightPt, const vec3 rayDirection, float& ColValue);
+	~shape();
+	vec3 position;
+	vec3 mcolor;
+};
+```
+
+You need to write your own CPP file for shape class
+
+An example of mesh/triangle class
+ ```C++
+#pragma once
+#include "shape.h"
+#include "glm/glm/glm.hpp"
+
+class triangle : public shape
+{
+private:
+	vec3 vertex0, vertex1, vertex2;
+	vec3 norm0, norm1, norm2;
+
+public:
+	triangle(vec3 pos, vec3 v0, vec3 v1, vec3 v2, vec3 color);
+	triangle(vec3 pos, vec3 v0, vec3 v1, vec3 v2,
+		vec3 n0, vec3 n1, vec3 n2,
+		vec3 color) :
+		vertex0(v0), vertex1(v1), vertex2(v2), norm0(n0), norm1(n1), norm2(n2)
+	{
+		mcolor = color;
+	};
+
+	bool intersection(vec3 rayDirection, vec3 rayOrigin, float& t, vec3 &IntPt, vec3& normVec)override;
+	void ComputeColor(const float ambientIntensity, const vec3 IntPt, const vec3 lightPt, const vec3 rayDirection, const vec3 tNormvec, float& ColValue);
+	~triangle();
+};
+```
 
 
 
