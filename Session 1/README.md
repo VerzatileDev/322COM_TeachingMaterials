@@ -144,7 +144,7 @@ Now, you compile the project and generate an executable file.
 This section is based on rendering 3D spheres using the Ray Casting algorithm and when
 completed should look something similar to this:
 
-![empty project picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Spheres.JPG)
+![Sphere picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Spheres.jpg)
 
 First you need to create primitives to populate the world. In this workshop you will render
 spheres so you will need to create a Sphere class and add some test spheres to your world. The
