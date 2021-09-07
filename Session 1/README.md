@@ -164,8 +164,21 @@ appears much larger as it is nearer to the camera.
 Even the floor can be created by a very large sphere:
 * Dark grey sphere: Position (0, -10004, -20), Radius (10000), Colour (0.2, 0.2, 0.2)
 
-### Next Step
+### Step two
 Find intersections between the ray and spheres. Add a method for ray-sphere intersection to
 your Sphere class (see lecture slide on geometric solution for more details). If the ray hits a sphere,
 return true, else return false.
 
+There is also some different methods/implementations.
+https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-sphere-intersection
+
+### Step three
+Use the intersect method for each ray, if the ray hits a sphere, set the colour of the nearest
+sphere at the intersection point, else set the background colour.
+
+Your ray casting algorithm is now complete so if you compile and run your code you should be able
+to see your spheres in the output file. Verify that the spheres appear as you intended and make sure
+that some of your spheres overlap so that you can test if you are correctly displaying the colour of
+the nearest sphere.
+Although, the spheres look boring right now your code can be extended for shading, shadows and
+reflections, these will be covered in future workshops.
