@@ -1,10 +1,10 @@
 # Session 2 - Ray Casting
 
 #### Table of Contents
-1. [Sphere Ray Casting Solution](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#setting-up-in-github)
-2. [Cloning the repository](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#cloning-the-repository)
-3. [Creating a C++ Project using Visual Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#creating-a-c-project-using-visual-studio)
-4. [Base Code](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201#base-code)
+1. [Sphere Ray Casting Solution](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Sphere-Ray-Casting-Solution)
+2. [Redesign data class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Redesign-data-class)
+3. [Creating a C++ Project using Visual Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#creating-a-c-project-using-visual-studio)
+4. [Base Code](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#base-code)
 
 
 ## Sphere Ray Casting Solution
@@ -96,42 +96,104 @@ vec3 Sphere::getMyColor(void)
 }
 ```
 
-![Sign in picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Sign%20in.PNG)
- 
-Once you have logged into the server, 
+Intersection points order sorting codes. So, the closest sphere will display the full sphere. 
 
-Click on + button to add new repository under your username. You are also welcome to use your own organization. 
+```C++
+	vector<float> t_arr;
+	vector<vec3> color_arr;
+	
+    for (int y = 0; y < HEIGHT; ++y)
+	{
+		for (int x = 0; x < WIDTH; ++x)
+		{
+			t_arr.clear();
+			color_arr.clear();
 
-![Organizations picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/AddRepos.JPG)
- 
- Once there, create a new repository via the green _"New button"_.
- 
- * For the repository name, call it something obvious (and add your student ID) to the front.
- * Set it to private (or everyone in the university can see it!).
- * Initialize a README file.
- 
- By doing all of this, it means that the markers will be able to see it, that other students cannot and that you can clone it straight away to your PC.
- 
-![Create a repository picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/CreateRepos.PNG)
- 
- Finally, add the module staff to your repository so they have access to it. (Our information can be found on the 212CR Aula page under _Module Essentials_.)
- 
- Go into your repository from the website, click "Settings", then "Collaborators", and then search for, and add, both members of module staff (YingLiang Ma (ac7020) and Ian) to the page. 
- 
- ![Add collaborators picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Add%20Collabs.png)
- 
-  
-## Creating a C++ Project using Visual Studio
- 
-> If you are not using Visual Studio 2019
+			PixelNdx = (x + 0.5) / (float)WIDTH;
+			PixelNdy = (y + 0.5) / (float)HEIGHT;
+			PixelRdx = 2 * PixelNdx - 1.0;
+			PixelRdy = 1.0 - 2 * PixelNdy;
+			PixelRdx = PixelRdx * Iar;
 
-* Open Visual Studio and Click _"File"_ -> _"New"_ -> _"Project.."_
-* Select _"Empty Project"_.
-* Make sure _"Create directory for solution"_ is unticked.
-* Give it a sensible name.
-* Make sure the location is the same as where the README file is stored.
+			PCameraX = PixelRdx*tanvalue;
+			PCameraY = PixelRdy*tanvalue;
 
+			ttvec.x = PCameraX;
+			ttvec.y = PCameraY;
+			ttvec.z = -1.0;
+			//dir need to be normalized
+			dir = normalize(ttvec);
 
+			org.x = 0.0; org.y = 0.0; org.z = 0.0;
+			Intersection = intersectSphere(redsphere.getCenter(), org, dir, redsphere.getRadius(), t);
+			if (Intersection)
+			{
+				t_arr.push_back(t);
+				color_arr.push_back(redsphere.getMyColor());
+			}
+
+			Intersection = intersectSphere(yellowsphere.getCenter(), org, dir, yellowsphere.getRadius(), t);
+			if (Intersection)
+			{
+				t_arr.push_back(t);
+				color_arr.push_back(yellowsphere.getMyColor());
+			}
+
+			Intersection = intersectSphere(bluesphere.getCenter(), org, dir, bluesphere.getRadius(), t);
+			if (Intersection)
+			{
+				t_arr.push_back(t);
+				color_arr.push_back(bluesphere.getMyColor());
+			}
+
+			Intersection = intersectSphere(greyphere.getCenter(), org, dir, greyphere.getRadius(), t);
+			if (Intersection)
+			{
+				t_arr.push_back(t);
+				color_arr.push_back(greyphere.getMyColor());
+			}
+
+			if (t_arr.size() == 0)
+			{
+				image[x][y].x = 1.0;
+				image[x][y].y = 1.0;
+				image[x][y].z = 1.0;
+			}
+			else
+			{
+				min_t = 1000.0;
+				whichone = 0;
+				for (i = 0; i < t_arr.size(); i++)
+				{
+					if (t_arr[i] < min_t) { whichone = i; min_t = t_arr[i]; }
+				}
+				image[x][y].x = color_arr[whichone].x;
+				image[x][y].y = color_arr[whichone].y;
+				image[x][y].z = color_arr[whichone].z;
+			}
+		}
+	}
+```
+
+ 
+## Redesign data class
+ 
+Before your code becomes too complex this is a good opportunity to refactor your ray casting code
+so that it is capable of rendering any primitive e.g. planes and triangles.
+
+Step 1: Create a base Shape class which should contain a virtual method for the intersection and
+then inherit Sphere from this class. Test that your code still runs correctly after the refactoring.
+
+Step 2: Add a Plane class that also inherits from your Shape class. The plane can be defined by a
+point on the plane and the normal to the plane. Add the intersect method using the ray-plane
+intersection method (see lecture slides for more details). Add a floor plane instead of the floor
+Sphere and test your code. Your scene may look very similar to before but actually the previous floor
+Sphere had a very slight curve whereas your floor will now be flat.
+
+Note: you will need to experiment with the field of view angle to effectively zoom out and see more
+of the floor.
+
+![Plane picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202/Readme%20Pictures/Plane.jpg)
 
 ## Add Spheres
 This section is based on rendering 3D spheres using the Ray Casting algorithm and when
