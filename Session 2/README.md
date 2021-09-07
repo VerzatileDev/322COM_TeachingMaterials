@@ -3,7 +3,7 @@
 #### Table of Contents
 1. [Sphere Ray Casting Solution](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Sphere-Ray-Casting-Solution)
 2. [Redesign data class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Redesign-data-class)
-3. [Creating a C++ Project using Visual Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#creating-a-c-project-using-visual-studio)
+3. [Add triangle classl Studio](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Add-triangle-class)
 4. [Base Code](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#base-code)
 
 
@@ -195,45 +195,16 @@ of the floor.
 
 ![Plane picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202/Readme%20Pictures/Plane.jpg)
 
-## Add Spheres
-This section is based on rendering 3D spheres using the Ray Casting algorithm and when
-completed should look something similar to this:
+## Add triangle class
 
-![Sphere picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%201/Readme%20Pictures/Spheres.jpg)
+Add a Triangle class that also inherits from your Shape class. A triangle can be defined by 3
+vertices. Add the intersect method using the ray-triangle intersection method (see lecture slide for
+more details). Add a triangle to a scene and test that it appears correctly.
 
-First you need to create primitives to populate the world. In this workshop you will render
-spheres so you will need to create a Sphere class and add some test spheres to your world. The
-Sphere class should contain the position of the centre of the sphere and its radius as well as its
-surface colour. Feel free to create your own colours, sizes and positions of spheres but they won’t
-appear until you have completed the next step.
- 
-Here is an example scene, based on the screenshot above:
-* Red sphere: Position (0, 0, -20), Radius (4), Colour (1.00, 0.32, 0.36)
-* Yellow sphere: Position (5, -1, -15), Radius (2), Colour (0.90, 0.76, 0.46)
-* Light blue sphere: Position (5, 0, -25), Radius (3), Colour (0.65, 0.77, 0.97)
-* Light grey sphere: Position (-5.5, 0, -15), Radius (3), Colour (0.90, 0.90, 0.90)
+![Triangle picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202/Readme%20Pictures/Triangle.jpg)
 
-Notice that even though the light blue and light grey sphere are the same size the light grey sphere
-appears much larger as it is nearer to the camera.
+Triangle with vertices: (0, 1, -2), (-1.9, -1, -2), (1.6, -0.5, -2)
 
-Even the floor can be created by a very large sphere:
-* Dark grey sphere: Position (0, -10004, -20), Radius (10000), Colour (0.2, 0.2, 0.2)
 
-### Step two
-Find intersections between the ray and spheres. Add a method for ray-sphere intersection to
-your Sphere class (see lecture slide on geometric solution for more details). If the ray hits a sphere,
-return true, else return false.
 
-There is also some different methods/implementations.
-https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-sphere-intersection
 
-### Step three
-Use the intersect method for each ray, if the ray hits a sphere, set the colour of the nearest
-sphere at the intersection point, else set the background colour.
-
-Your ray casting algorithm is now complete so if you compile and run your code you should be able
-to see your spheres in the output file. Verify that the spheres appear as you intended and make sure
-that some of your spheres overlap so that you can test if you are correctly displaying the colour of
-the nearest sphere.
-Although, the spheres look boring right now your code can be extended for shading, shadows and
-reflections, these will be covered in future workshops.
