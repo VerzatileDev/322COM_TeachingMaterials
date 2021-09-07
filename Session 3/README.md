@@ -14,10 +14,12 @@ Simple DirectMedia Layer (SDL2) is a cross-platform development library designed
 
 SDL officially supports Windows, Mac OS X, Linux, iOS, and Android.
 
-An example of screen display is provide in _"SDLPixel.cpp"_.
+An example of screen display is provide in _"SDLPixel.cpp"_. The example code only display a white screen. You need to add ray casting/tracing codes.
 
 The function PutPixel32_nolock ouput color into computer screen. You need to create a Uint32 color object using convertColour() function.
 
+If you use empty project as startup option in Visual Studio, you must choose the Console option. 
+It is Project Property->Linker->System->SubSystem. SubSystem should set to Console (/SUBSYSTEM:CONSOLE)
  
 ## Redesign data class
  
