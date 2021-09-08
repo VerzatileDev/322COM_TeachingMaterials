@@ -13,10 +13,15 @@ https://vulkan.lunarg.com/ . Choose your Platform. I only test it on Windows 10 
 So, I will only talk about installation in Windows. However, other platform installation is similar. 
 
 Step 1: Download Windows installer file and install it on your PC.
-Step 2: Download CMake 
 
+Step 2: Download CMake (https://cmake.org/). Install it.
 
-![SphereRayTracing picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204/Readme%20Pictures/Shadows.jpg)
+Step 3: Download Vulkan Tutorials from Github https://github.com/SaschaWillems/Vulkan 
+
+Step 4: Luach CMake and generate Visual Studio Project from Makefile
+Follow on-screen instruction.
+
+![CMake picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%2054/Readme%20Pictures/CMake.jpg)
 
 Detailed instruction of implementation can be found in _"Workshop 3A Instructions.pdf"_
  
