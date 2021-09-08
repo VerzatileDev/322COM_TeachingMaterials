@@ -44,6 +44,15 @@ One of example projects is called as shadowmapping. It is a good start project f
 
 ![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/shadowmapping.JPG)
 
+To extract the project files and combine with source codes, You might follow instructions below:
+
+1. Locate project files. 
+In side the Vulkan tutorial folder, look for "bin/examples" folder.
+You can find  shadowmapping.vcxproj and shadowmapping.vcxproj.filters files.
+
+2. Copy both project files into /examples/shadowmapping folder.
+
+3. Open project and try to compile it. You will find out two library files are missing.
 
 
 ## Acceleration structure
