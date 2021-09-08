@@ -4,8 +4,7 @@
 1. [Ray Tracing Spheres](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Ray-Tracing-Spheres)
 2. [Ray Tracing Primitives](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Ray-Tracing-Primitives)
 3. [Multithread](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Multithread)
-4. [Rendering complex shape](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Rendering-complex-shape)
-5. [Example of mesh class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Example-of-mesh-class)
+
 
 
 ## Ray Tracing Spheres
@@ -147,6 +146,3 @@ void MultiThread(int start, int end) {
 
 The TraceAndGetColour is your ray tracing function which does heavy computation.
 
-## Rendering 
-
-This section 
