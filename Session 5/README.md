@@ -24,6 +24,9 @@ Follow on-screen instruction.
 ![CMake picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/CMake.JPG)
 
 You need to configure the project first and generate the Visual Studio project. Normally, I put Visual Studio Project files into Bin folder or Build folder.
+
+Step 5: Build tutorial project.
+
 When you try to compile "ALL_BUILD" project, you often find something is missing.
 In my case, the glm library is missing. Download latest version of glm and zip it into external folder inside Vulkan tutorial folder.
 
