@@ -3,8 +3,8 @@
 #### Table of Contents
 1. [Installation](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Installation)
 2. [Example Project](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Example-Project)
-3. [Add your own models](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Acceleration-structure)
-4. [Recursive Reflection](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Recursive-Reflection)
+3. [Change models](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Change-models)
+4. [etets](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Recursive-Reflection)
 
 ## Installation
 
@@ -18,7 +18,7 @@ Step 2: Download CMake (https://cmake.org/). Install it.
 
 Step 3: Download Vulkan Tutorials from Github https://github.com/SaschaWillems/Vulkan 
 
-Step 4: Luach CMake and generate Visual Studio Project from Makefile
+Step 4: Launch CMake and generate Visual Studio Project from Makefile
 Follow on-screen instruction.
 
 ![CMake picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/CMake.JPG)
@@ -47,7 +47,7 @@ One of example projects is called as shadowmapping. It is a good start project f
 To extract the project files and combine with source codes, You might follow instructions below:
 
 1. Locate project files. 
-In side the Vulkan tutorial folder, look for "bin/examples" folder.
+Inside the Vulkan tutorial folder, look for "bin/examples" folder.
 You can find  shadowmapping.vcxproj and shadowmapping.vcxproj.filters files.
 
 2. Copy both project files into /examples/shadowmapping folder.
@@ -61,19 +61,37 @@ That is because we moved project file. The relative path to base library file is
 I just copy base.lib to project folder. Set relative path to "./base.lib". Now, you should be able to compile the project. 
 
 
-## Acceleration structure
+## Change models
 
-Acceleration structure optimised the Ray Tracing algorithm using bounding volumes. Bounding volumes are
-the foundation for both Bounding Volume Hierarchies and Uniform Grid acceleration structures and
-standalone provide a significant performance increase to the ray tracing algorithm.
+Changing models are relatively easy in this project. Inside the Vulkan tutorial folder, there is a /data/models/ folder.
+There are many models including colored models you can choose.
+You can change models by changing model name in 
 
-Detailed instruction of implementation can be found in _"Workshop 4 Instructions.pdf"_
-
-The example of class for bounding box is shown below.
-Header file
+From 
 
 ```C++
-#pragma once
-#include "glm/glm.hpp"
+	void loadAssets()
+	{
+		const uint32_t glTFLoadingFlags = vkglTF::FileLoadingFlags::PreTransformVertices | vkglTF::FileLoadingFlags::PreMultiplyVertexColors | vkglTF::FileLoadingFlags::FlipY;
+		scenes.resize(2);
+		scenes[0].loadFromFile(getAssetPath() + "models/vulkanscene_shadow.gltf", vulkanDevice, queue, glTFLoadingFlags);
+		scenes[1].loadFromFile(getAssetPath() + "models/samplescene.gltf", vulkanDevice, queue, glTFLoadingFlags);
+		sceneNames = {"Vulkan scene", "Teapots and pillars" };
+	}
 ```
 
+to
+
+```C++
+	void loadAssets()
+	{
+		const uint32_t glTFLoadingFlags = vkglTF::FileLoadingFlags::PreTransformVertices | vkglTF::FileLoadingFlags::PreMultiplyVertexColors | vkglTF::FileLoadingFlags::FlipY;
+		scenes.resize(2);
+		scenes[0].loadFromFile(getAssetPath() + "models/chinesedragon.gltf", vulkanDevice, queue, glTFLoadingFlags);
+		scenes[1].loadFromFile(getAssetPath() + "models/samplescene.gltf", vulkanDevice, queue, glTFLoadingFlags);
+		sceneNames = {"chinesedragon", "Teapots and pillars" };
+	}
+```
+
+New results are
+![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/dragon.JPG)
