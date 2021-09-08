@@ -30,7 +30,13 @@ Step 5: Build tutorial project.
 When you try to compile "ALL_BUILD" project, you often find something is missing.
 In my case, the glm library is missing. Download latest version of glm and zip it into external folder inside Vulkan tutorial folder.
 
+Step 6: Run Vulkan examples
 
+Hardware requirement for Vulkan is pretty OK. I used two 10 year-old laptop run examples. Both are fine.
+Both laptops have NVidia graphic cards. 
+Some examples requires binary assets (models, textures, etc.) which is not stored in Github. They have to be downloaded manually.
+The instructions are
+https://github.com/SaschaWillems/Vulkan/blob/master/data/README.md
  
 ## Soft Shadows
 
