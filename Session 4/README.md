@@ -1,4 +1,4 @@
-# Session 3 - Ray Tracing
+# Session 4 - Shadows, Acceleration structure and reflection
 
 #### Table of Contents
 1. [Hard Shadows](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204#Hard-Shadows)
