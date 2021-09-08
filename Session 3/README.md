@@ -100,8 +100,52 @@ position (1,3,1) and intensity (1,1,1).
 
 ## Multithread
 
+You might find your ray tracing programming is quite slow if including a lot of objects. You can use multithread to speed up.
 An simple implementation of multithread can be found in _"MThread.cpp"_.
 It creates 10 threads and display "Hello from thread". 
+
+To use multithread in your ray tracing progamming. You should split your intersection and computing color tasks into different threads.
+For example, you create 32 threads. Each one 1/32 of screen rendering for ray tracing.
+ 
+```C++
+	std::vector<std::thread> threads;
+	const int threadCount = 32;
+	for (int i = 0; i < threadCount; i++) {
+		threads.push_back( std::thread(MultiThread,i*WIDTH/threadCount,(i+1)* WIDTH / threadCount));
+
+	}
+
+	for (int i = 0; i < threadCount; i++) {
+		threads[i].join();
+
+	}
+```
+
+Then you define a multithread function which executes in each thread. It assign colors directly to image[x][y],
+which will be updated in computer screen.
+
+```C++
+void MultiThread(int start, int end) {
+	vec3 finalCol;
+
+	//loop through pixels
+	for (int x = start; x < end; x++)
+	{
+		for (int y = 0; y < HEIGHT; y++)
+		{
+			vec3 thisPixelRayDir = ConstructRay(x, y);
+
+			finalCol = vec3(0,0,0);
+			TraceAndGetColour(thisPixelRayDir, RAYORIGIN, finalCol, 0);
+			image[x][y] = finalCol;
+
+		}
+		OutputToScreen();
+	}
+}
+```
+
+The TraceAndGetColour is your ray tracing function which does heavy computation.
 
 ## Rendering 
 
