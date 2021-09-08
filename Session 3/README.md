@@ -1,25 +1,22 @@
-# Session 3 - Interactive Ray Tracing
+# Session 3 - Ray Tracing
 
 #### Table of Contents
-1. [Add screen display using SDL2 Library](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Add-screen-display-using-SDL2-Library)
+1. [Ray Tracing Spheres](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Ray-Tracing-Spheres)
 2. [Redesign data class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Redesign-data-class)
 3. [Add triangle class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Add-triangle-class)
 4. [Rendering complex shape](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Rendering-complex-shape)
 5. [Example of mesh class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Example-of-mesh-class)
 
 
-## Add screen display using SDL2 Library
+## Ray Tracing Spheres
 
-Simple DirectMedia Layer (SDL2) is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. 
+This week follows on from the Ray Casting algorithm so you need to have completed at least
+last week worload (section 1 and 2). This week involves modelling light to create diffuse and specular
+lighting as illustrated below:
 
-SDL officially supports Windows, Mac OS X, Linux, iOS, and Android.
+![SphereRayTracing picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203/Readme%20Pictures/SphereRayTracing.jpg)
 
-An example of screen display is provide in _"SDLPixel.cpp"_. The example code only display a white screen. You need to add ray casting/tracing codes.
-
-The function PutPixel32_nolock ouput color into computer screen. You need to create a Uint32 color object using convertColour() function.
-
-If you use empty project as startup option in Visual Studio, you must choose the Console option. 
-It is Project Property->Linker->System->SubSystem. SubSystem should set to Console (/SUBSYSTEM:CONSOLE)
+Detailed instruction of implementation can be found in _"Workshop 2A Instructions.pdf"_
  
 ## Redesign data class
  
