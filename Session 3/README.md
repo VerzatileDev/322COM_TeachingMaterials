@@ -88,6 +88,15 @@ should be able to render any model that you load, start by testing the cube and 
 Warning: you will need the “teapot simple smooth.obj” file from moodle to render the smooth
 teapot shown below.
 
+![Triangle picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203/Readme%20Pictures/CubeRT.JPG)
+
+Cube - diffuse colour (0.5,0.5,0.0) and shininess(0). Light with position (1,3,1) and intensity (1,1,1)
+
+![Triangle picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203/Readme%20Pictures/TeapotRT.JPG)
+
+Teapot - diffuse colour (0.5,0.5,0.0), specular
+colour (0.7, 0.7, 0.7) and shininess (100). Light with
+position (1,3,1) and intensity (1,1,1).
 
 ## Add triangle class
 
