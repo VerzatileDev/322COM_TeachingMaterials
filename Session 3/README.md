@@ -48,6 +48,47 @@ Olive triangle with vertices: (0, 1, -2), (-1.9, -1, -2), (1.6, -0.5, -2), norma
 vec3(0.4, -0.4, 1.0), diffuse colour (0.5,0.5,0.0), specular colour (0.7, 0.7, 0.7) and shininess (100). Light with
 position (1,3,1) and intensity (1,1,1).
 
+### Shading more complex shapes
+
+It is advanced level and is optional.
+You previously read the obj files (cubes and teapots) using the loadOBJ function from objloader class
+which returned vertices and normals (see code snippet below):
+
+Define data structure of vertex
+
+```C++
+ #ifndef VERTEX_H
+#define VERTEX_H
+
+#include <glm/glm.hpp>
+
+struct  VertexWithAll
+{
+	glm::vec3 position;
+	glm::vec3 color;
+	glm::vec2 textcoord;
+	glm::vec3 normal;
+};
+
+#endif
+};
+```
+
+Codes for load mesh data
+
+```C++
+	std::vector<VertexWithAll> mesh = loadOBJ(name); //Import OBJ file data into a vector array
+	int NumVert = mesh.size();
+```
+
+You already created triangles for each 3 vertices and added it to your scene, you
+now also need to pass the 3 normals to your triangle class. Once this simple step is complete you
+should be able to render any model that you load, start by testing the cube and teapot:
+
+Warning: you will need the “teapot simple smooth.obj” file from moodle to render the smooth
+teapot shown below.
+
+
 ## Add triangle class
 
 Add a Triangle class that also inherits from your Shape class. A triangle can be defined by 3
