@@ -105,3 +105,5 @@ It is advanced level and optional.
 This workshop involves implementing reflections as illustrated below:
 
 ![Reflection picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204/Readme%20Pictures/Reflection.jpg)
+
+Detailed instruction of implementation can be found in _"Workshop 5 Instructions.pdf"_
