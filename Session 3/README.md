@@ -2,7 +2,7 @@
 
 #### Table of Contents
 1. [Ray Tracing Spheres](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Ray-Tracing-Spheres)
-2. [Redesign data class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Redesign-data-class)
+2. [Ray Tracing Primitives](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Ray-Tracing-Primitives)
 3. [Add triangle class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Add-triangle-class)
 4. [Rendering complex shape](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Rendering-complex-shape)
 5. [Example of mesh class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203#Example-of-mesh-class)
@@ -18,24 +18,35 @@ lighting as illustrated below:
 
 Detailed instruction of implementation can be found in _"Workshop 2A Instructions.pdf"_
  
-## Redesign data class
+## Ray Tracing Primitives
  
-Before your code becomes too complex this is a good opportunity to refactor your ray casting code
-so that it is capable of rendering any primitive e.g. planes and triangles.
-
-Step 1: Create a base Shape class which should contain a virtual method for the intersection and
-then inherit Sphere from this class. Test that your code still runs correctly after the refactoring.
-
-Step 2: Add a Plane class that also inherits from your Shape class. The plane can be defined by a
-point on the plane and the normal to the plane. Add the intersect method using the ray-plane
-intersection method (see lecture slides for more details). Add a floor plane instead of the floor
-Sphere and test your code. Your scene may look very similar to before but actually the previous floor
-Sphere had a very slight curve whereas your floor will now be flat.
-
-Note: you will need to experiment with the field of view angle to effectively zoom out and see more
+### Shading planes
+To correctly shade other shapes you should refactor your code so that each shape has its own
+function to calculate the normal. This is trivial for the plane as you can simply return the normal. You
+also need to refactor each shape to replace colour with diffuse colour (𝐤𝐝) and specular colour (𝐤𝐬)
+and shininess. Make the specular colour grey, with equal red, green, and blue values e.g.
+(0.7,0.7,0.7). Set shininess to zero for matte surface or to a higher value for shiny surfaces.
 of the floor.
 
-![Plane picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202/Readme%20Pictures/Plane.jpg)
+### Shading triangles
+Often triangles are used as an approximation to a smooth surface and many models will come with
+the normals supplied (e.g. the cube and teapot used later in this workshop). Assuming the normals
+will be supplied for each vertex of the triangle in the model you first you need to store these normals
+(n0, n1 and n2) in your triangle class.
+
+Then you need to interpolate the normals over the surface of the triangle so that you can apply the
+shading at each pixel. You can re-use the barycentric weights u, v and w that you calculated in your
+triangle intersection function to interpolate the normals for each intersection point:
+n = w*n0 + u*n1 + v*n2
+Hint: don’t forget to normalise n before using it in the shading equations
+
+Render the triangle shown in the image below by using the parameters given.
+
+![Triangle picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203/Readme%20Pictures/TriangleRT.JPG)
+
+Olive triangle with vertices: (0, 1, -2), (-1.9, -1, -2), (1.6, -0.5, -2), normals (0.0, 0.6, 1.0), (-0.4,-0.4,1.0),
+vec3(0.4, -0.4, 1.0), diffuse colour (0.5,0.5,0.0), specular colour (0.7, 0.7, 0.7) and shininess (100). Light with
+position (1,3,1) and intensity (1,1,1).
 
 ## Add triangle class
 
@@ -43,7 +54,7 @@ Add a Triangle class that also inherits from your Shape class. A triangle can be
 vertices. Add the intersect method using the ray-triangle intersection method (see lecture slide for
 more details). Add a triangle to a scene and test that it appears correctly.
 
-![Triangle picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202/Readme%20Pictures/Triangle.jpg)
+
 
 Triangle with vertices: (0, 1, -2), (-1.9, -1, -2), (1.6, -0.5, -2)
 
