@@ -14,7 +14,7 @@ This week follows on from the Ray Casting algorithm so you need to have complete
 last week worload (section 1 and 2). This week involves modelling light to create diffuse and specular
 lighting as illustrated below:
 
-![SphereRayTracing picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203/Readme%20Pictures/SphereRayTracing.jpg)
+![SphereRayTracing picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%203/Readme%20Pictures/SphereRayTracing.JPG)
 
 Detailed instruction of implementation can be found in _"Workshop 2A Instructions.pdf"_
  
