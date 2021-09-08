@@ -4,7 +4,7 @@
 1. [Hard Shadows](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204#Hard-Shadows)
 2. [Soft Shadows](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204#Soft-Shadows)
 3. [Acceleration structure](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204#Acceleration-structure)
-
+4. [Recursive Reflection](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204#Recursive-Reflection)
 
 ## Hard Shadows
 
@@ -98,3 +98,8 @@ The example of usage in ray tracing implementation
 
 	}
 ```
+## Recursive Reflection
+
+Acceleration structure optimised the Ray Tracing algorithm using bounding volumes. Bounding volumes are
+the foundation for both Bounding Volume Hierarchies and Uniform Grid acceleration structures and
+standalone provide a significant performance increase to the ray tracing algorithm.
