@@ -4,7 +4,7 @@
 1. [Installation](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Installation)
 2. [Example Project](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Example-Project)
 3. [Change models](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Change-models)
-4. [etets](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Recursive-Reflection)
+4. [Change camera](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Change-camera)
 
 ## Installation
 
@@ -96,3 +96,37 @@ to
 New results are
 
 ![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/dragon.JPG)
+
+## Change camera
+
+The old camera is too far from our new model and rotated. To fix that, find the construct function and camera parameters
+
+From 
+
+```C++
+	VulkanExample() : VulkanExampleBase(ENABLE_VALIDATION)
+	{
+		title = "Projected shadow mapping";
+		camera.type = Camera::CameraType::lookat;
+		camera.setPosition(glm::vec3(0.0f, -0.0f, -20.0f));
+		camera.setRotation(glm::vec3(-15.0f, -390.0f, 0.0f));
+		camera.setPerspective(60.0f, (float)width / (float)height, 1.0f, 256.0f);
+		timerSpeed *= 0.5f;
+		settings.overlay = true;
+	}
+```
+
+To
+
+```C++
+	VulkanExample() : VulkanExampleBase(ENABLE_VALIDATION)
+	{
+		title = "Projected shadow mapping";
+		camera.type = Camera::CameraType::lookat;
+		camera.setPosition(glm::vec3(0.0f, -0.0f, -5.0f));  //move camera close to the object by change Z values
+		camera.setRotation(glm::vec3(-90.0f, 0.0f, 90.0f)); //Reset camera rotation
+		camera.setPerspective(60.0f, (float)width / (float)height, 1.0f, 256.0f);
+		timerSpeed *= 0.5f;
+		settings.overlay = true;
+	}
+```
