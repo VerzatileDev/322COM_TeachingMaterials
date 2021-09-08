@@ -21,7 +21,7 @@ Step 3: Download Vulkan Tutorials from Github https://github.com/SaschaWillems/V
 Step 4: Luach CMake and generate Visual Studio Project from Makefile
 Follow on-screen instruction.
 
-![CMake picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%2054/Readme%20Pictures/CMake.JPG)
+![CMake picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/CMake.JPG)
 
 Detailed instruction of implementation can be found in _"Workshop 3A Instructions.pdf"_
  
