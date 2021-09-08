@@ -6,7 +6,7 @@
 3. [Add triangle class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Add-triangle-class)
 4. [Rendering complex shape](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Rendering-complex-shape)
 5. [Example of mesh class](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Example-of-mesh-class)
-
+6. [Add screen display using SDL2 Library](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%202#Add-screen-display-using-SDL2-Library)
 
 ## Sphere Ray Casting Solution
 
@@ -300,11 +300,24 @@ bool triangle::intersection(vec3 rayDirection, vec3 rayOrigin, float &t, vec3 &I
 		return false;
 	else
 	{
-		IntPt = rayOrigin + t * rayDirection;
-		normVec = glm::normalize(w * norm0 + u * norm1 + v * norm2);
-	
-		t = dot(v0v2, cross((rayOrigin - vertex0), v0v1)) / dot(v0v1, cross(rayDirection, v0v2));
+        //compute intersection point, t and normal vector
+		//add your codes here
 		return true;
 	}
 }
 ```
+
+## Add screen display using SDL2 Library
+
+If you want to output rendering result directly to the screen, you should use SDL2.
+Simple DirectMedia Layer (SDL2) is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. 
+
+SDL officially supports Windows, Mac OS X, Linux, iOS, and Android.
+
+An example of screen display is provide in _"SDLPixel.cpp"_. The example code only display a white screen. You need to add ray casting/tracing codes.
+
+The function PutPixel32_nolock ouput color into computer screen. You need to create a Uint32 color object using convertColour() function.
+
+If you use empty project as startup option in Visual Studio, you must choose the Console option. 
+It is Project Property->Linker->System->SubSystem. SubSystem should set to Console (/SUBSYSTEM:CONSOLE)
+
