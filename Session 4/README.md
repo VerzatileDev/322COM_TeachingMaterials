@@ -3,7 +3,7 @@
 #### Table of Contents
 1. [Hard Shadows](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204#Hard-Shadows)
 2. [Soft Shadows](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204#Soft-Shadows)
-3. [Multithread](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204#Multithread)
+3. [Acceleration structure](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204#Acceleration-structure)
 
 
 ## Hard Shadows
@@ -23,6 +23,10 @@ This week follows on from the last session. This week involves distributed ray t
 
 Detailed instruction of implementation can be found in _"Workshop 3B Instructions.pdf"_
 
-## Multithread
+## Acceleration structure
 
-You migh
+Acceleration structure optimised the Ray Tracing algorithm using bounding volumes. Bounding volumes are
+the foundation for both Bounding Volume Hierarchies and Uniform Grid acceleration structures and
+standalone provide a significant performance increase to the ray tracing algorithm.
+
+Detailed instruction of implementation can be found in _"Workshop 4 Instructions.pdf"_
