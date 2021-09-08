@@ -52,7 +52,13 @@ You can find  shadowmapping.vcxproj and shadowmapping.vcxproj.filters files.
 
 2. Copy both project files into /examples/shadowmapping folder.
 
-3. Open project and try to compile it. You will find out two library files are missing.
+3. Open project and try to compile it. You will find out one library file (base.lib) is missing.
+That is because we moved project file. The relative path to base library file is no longer working.
+
+![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/projectsetting.JPG)
+
+4. Fix the missing library. 
+
 
 
 ## Acceleration structure
