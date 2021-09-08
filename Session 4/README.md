@@ -98,8 +98,9 @@ The example of usage in ray tracing implementation
 
 	}
 ```
+
 ## Recursive Reflection
 
-Acceleration structure optimised the Ray Tracing algorithm using bounding volumes. Bounding volumes are
-the foundation for both Bounding Volume Hierarchies and Uniform Grid acceleration structures and
-standalone provide a significant performance increase to the ray tracing algorithm.
+It is advanced level and optional. 
+This workshop involves implementing reflections as illustrated below:
+![Reflection picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%204/Readme%20Pictures/Reflection.jpg)
