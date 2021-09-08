@@ -130,3 +130,7 @@ To
 		settings.overlay = true;
 	}
 ```
+
+New results are
+
+![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/dragonReset.JPG)
