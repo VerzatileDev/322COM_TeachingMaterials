@@ -58,7 +58,7 @@ That is because we moved project file. The relative path to base library file is
 ![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/projectsetting.JPG)
 
 4. Fix the missing library. 
-
+I just copy base.lib to project folder. Set relative path to "./base.lib". Now, you should be able to compile the project. 
 
 
 ## Acceleration structure
