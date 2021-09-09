@@ -275,4 +275,16 @@ The new result is
 Vulkan use glTF format for 3D models. Currently, 3DSMax can not export. But Blender can. The YouTube tutorial link
 https://www.youtube.com/watch?v=01Fl6gACK5g
 
+### Physically Based Rendering
+ 
+Physical based rendering as a lighting technique that achieves a more realistic and dynamic look by applying approximations
+ of bidirectional reflectance distribution functions based on measured real-world material parameters and
+ environment lighting. 
+ 
+ There are some sample projects in Vulkan tutorials. 
+ PBR basics (https://github.com/SaschaWillems/Vulkan/tree/master/examples/pbrbasic)
+ PBR image based lighting (https://github.com/SaschaWillems/Vulkan/tree/master/examples/pbribl)
+ 
+ Please note most of physical based computation are inside the fragment shader.
+ 
  
