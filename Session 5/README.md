@@ -191,3 +191,13 @@ If you move shader folder inside your project folder, you can change codes to
 		shaderStages[0] = loadShader("./shader/scene.vert.spv", VK_SHADER_STAGE_VERTEX_BIT);  
 		shaderStages[1] = loadShader("./shader/scene.frag.spv", VK_SHADER_STAGE_FRAGMENT_BIT);
 ```
+
+You might notice that the shader file (*.spv) for Vulkan is binary so you can not edit. 
+But there are glsl format of shaders which are text format.
+
+To convert glsl format to spv format using following commands
+
+```C++
+   glslc.exe shader.vert -o vert.spv
+   glslc.exe shader.frag -o frag.spv
+```
