@@ -6,6 +6,7 @@
 3. [Change models](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Change-models)
 4. [Change camera](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Change-camera)
 5. [Move light](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Move-light)
+6. [Shader programming](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Shader-programming)
 
 ## Installation
 
@@ -168,3 +169,25 @@ New codes
 You also can test new light position with teapot scene. Just got shadowmapping scene setting menu. Change to Teapots.
 
 ![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/Teapot.JPG)
+
+## Shader programming
+
+Before we can change the shader codes, first we need to find out where the shader codes are.
+The Vulkan tutorials store all shader files in /data/shader/glsl/ folder. As we are familar with OpenGL glsl shader codes, we are better to use codes in glsl format.
+
+Copy shadowmapping shader to your project folder and rename it as shader folder. Now, we change path setting in shadowmapping project.
+
+The path is defined in void preparePipelines() function
+
+```C++
+		shaderStages[0] = loadShader(getShadersPath() + "shadowmapping/scene.vert.spv", VK_SHADER_STAGE_VERTEX_BIT);
+		shaderStages[1] = loadShader(getShadersPath() + "shadowmapping/scene.frag.spv", VK_SHADER_STAGE_FRAGMENT_BIT);
+```
+
+If you move shader folder inside your project folder, you can change codes to
+
+
+```C++
+		shaderStages[0] = loadShader("./shader/scene.vert.spv", VK_SHADER_STAGE_VERTEX_BIT);  
+		shaderStages[1] = loadShader("./shader/scene.frag.spv", VK_SHADER_STAGE_FRAGMENT_BIT);
+```
