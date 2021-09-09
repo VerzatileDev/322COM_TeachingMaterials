@@ -201,3 +201,40 @@ To convert glsl format to spv format using following commands
    glslc.exe shader.vert -o vert.spv
    glslc.exe shader.frag -o frag.spv
 ```
+
+### Change object color via shader codes
+
+In the fragment shader 
+
+```C++
+	vec3 N = normalize(inNormal);
+	vec3 L = normalize(inLightVec);
+	vec3 V = normalize(inViewVec);
+	vec3 R = normalize(-reflect(L, N));
+	vec3 diffuse = max(dot(N, L), ambient) * inColor;
+
+	outFragColor = vec4(diffuse * shadow, 1.0);
+```
+
+Change to 
+
+```C++
+	vec3 N = normalize(inNormal);
+	vec3 L = normalize(inLightVec);
+	vec3 V = normalize(inViewVec);
+	vec3 R = normalize(-reflect(L, N));
+	vec3 newColor = vec3(0.0,1.0,1.0);
+	vec3 diffuse = max(dot(N, L), ambient) * newColor;
+
+	outFragColor = vec4(diffuse * shadow, 1.0);
+```
+
+Delete old scene.frag.spv and run converting command
+
+```C++
+	glslc.exe scene.frag -o scene.frag.spv
+```
+
+The new color result is
+
+![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/dragonColor.JPG)
