@@ -270,4 +270,9 @@ The new result is
 
 ## Self-learning Topics
 
-Before we can change the shader codes, first we need to find out where the shader codes are.
+### Create 3D models for Vulkan
+
+Vulkan use glTF format for 3D models. Currently, 3DSMax can not export. But Blender can. The YouTube tutorial link
+https://www.youtube.com/watch?v=01Fl6gACK5g
+
+ 
