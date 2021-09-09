@@ -7,6 +7,7 @@
 4. [Change camera](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Change-camera)
 5. [Move light](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Move-light)
 6. [Shader programming](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Shader-programming)
+7. [Self-learning Topics](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Self-learning-Topics)
 
 ## Installation
 
@@ -238,3 +239,35 @@ Delete old scene.frag.spv and run converting command
 The new color result is
 
 ![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/dragonColor.JPG)
+
+### Add specular lighting effect
+
+We can continue to work on fragment shader by adding specular lighting calculation codes. As we learn in second-year graphic module,
+ spec = pow(max(dot(viewDir,reflectDir),0.0),32); // 32 is specular power factor. The higher value, more reflective.
+ refelctDir vector = reflect(-lightDir, normal); 
+ 
+ Finally, the new codes for fragment shader
+ 
+```C++
+	vec3 N = normalize(inNormal);
+	vec3 L = normalize(inLightVec);
+	vec3 V = normalize(inViewVec);
+	vec3 R = normalize(-reflect(L, N));
+	vec3 newColor = vec3(0.0,1.0,1.0);
+	vec3 diffuse = max(dot(N, L), ambient) * newColor;
+	
+	vec3 reflectDir = reflect(-L, N);
+	float spec = pow(max(dot(V,reflectDir),0.0),16);
+	vec3 speColor = vec3(1.0,1.0,1.0);
+	vec3 specular = spec * speColor;
+
+	outFragColor = vec4((diffuse+specular) * shadow, 1.0);
+```
+
+The new result is
+
+![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/dragonSpec.JPG)
+
+## Self-learning Topics
+
+Before we can change the shader codes, first we need to find out where the shader codes are.
