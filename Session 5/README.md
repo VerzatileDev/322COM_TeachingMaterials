@@ -5,6 +5,7 @@
 2. [Example Project](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Example-Project)
 3. [Change models](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Change-models)
 4. [Change camera](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Change-camera)
+5. [Move light](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205#Move-light)
 
 ## Installation
 
@@ -134,3 +135,36 @@ To
 New results are
 
 ![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/dragonReset.JPG)
+
+
+## Move light
+
+The old light is too far from the object. It need to be adjusted. The light position is defined in void updateLight() function.
+
+Old codes
+
+```C++
+	void updateLight()
+	{
+		// Animate the light source
+		lightPos.x = cos(glm::radians(timer * 360.0f)) * 40.0f;
+		lightPos.y = -50.0f + sin(glm::radians(timer * 360.0f)) * 20.0f;
+		lightPos.z = 25.0f + sin(glm::radians(timer * 360.0f)) * 5.0f;
+	}
+```
+
+New codes
+
+```C++
+	void updateLight()
+	{
+		// Animate the light source
+		lightPos.x = -20.0f + cos(glm::radians(timer * 360.0f)) * 2.0f; //align with object center
+		lightPos.y = -10.0f + sin(glm::radians(timer * 360.0f)) * 20.0f;
+		lightPos.z = -20.0f + sin(glm::radians(timer * 360.0f)) * 5.0f;  // move light close to the camera
+	}
+```
+
+You also can test new light position with teapot scene. Just got shadowmapping scene setting menu. Change to Teapots.
+
+![shadowmapping picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%205/Readme%20Pictures/Teapot.JPG)
