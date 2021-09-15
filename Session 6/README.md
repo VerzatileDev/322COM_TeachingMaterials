@@ -20,9 +20,4 @@ height map. Compile and run the code and check that you get the grid shown below
 The instruction for lab task can be found in _"Workshop 6B Instructions.pdf"_.
 
 
-## Change models
-
-Changing models are relatively easy in this project. Inside the Vulkan tutorial folder, there is a /data/models/ folder.
-There are many models including colored models you can choose.
-You can change models by changing model name in 
 
