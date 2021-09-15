@@ -12,6 +12,7 @@ The base project can be downloaded from this week Github folder. which contains 
 Studio Solution to get you started with the modern version of OpenGL. The project uses the
 libraries: GLM, GLEW and freeglut. The project contains initialisation code to create a window and to draw a flat
 height map. Compile and run the code and check that you get the grid shown below.
+Make Sure, the project Configuration is set as 'x64' (NOT 'Win32').
 
 ![baseProject picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206/Readme%20Pictures/TerranFlat.JPG)
  
