@@ -19,5 +19,17 @@ height map. Compile and run the code and check that you get the grid shown below
 
 The instruction for lab task can be found in _"Workshop 6B Instructions.pdf"_.
 
+Hint: The random function with range from -1 to 1 should be expressed as
+
+```C++
+	h1 = (rand() % 10) / 5.0 - 1.0;
+```
+
+The final result should like this:
+
+![Finalresult picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206/Readme%20Pictures/Terran.JPG)
+
+
+
 
 
