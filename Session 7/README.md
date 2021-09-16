@@ -206,8 +206,27 @@ You need to change fragment shader codes to include texture. For example
 
 The multiple textures can be applied to the terrain so that different height levels have different colors.
 For low level close to water, it will be sandy color. The color in the highest level is white (snow color).
+So, you just import multiple texture maps in the C++ program and add texture colors into fragment shader. 
  
-
+```C++
+if(height <= -4.5f)
+	{
+		textureMap = texture(sandTexture, texCoordsExport);
+	}
+	else if(height <= -3.5f)
+	{
+		float diff = -3.5f - height; // a value between 0, 1
+		textureMap = (texture(sandTexture, texCoordsExport) * diff) + (texture(grassTexture, texCoordsExport) * (1-diff));
+	}
+	else if(height <= 8.5f)
+	{
+		textureMap = texture(grassTexture, texCoordsExport);
+	}
+	else
+	{
+		textureMap = texture(snowTexture, texCoordsExport);
+	}
+```
 
 
 
