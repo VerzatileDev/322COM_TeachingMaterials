@@ -18,16 +18,54 @@ Animated water tutorial using a imported mesh can be found in
 
 https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/tree/master/Session%209
 
-However, in this coursework, procedurally generated water is required. So, imported water mesh is not allow.
+However, in this coursework, procedurally generated water is required. So, imported water mesh is not allowed.
 
 To create a water mesh from scratch, we can use terrain mesh codes to create a flat large mesh object. 
 Here is some example codes.
 
 ```C++
-elViewMat * terrainCoords;
-}
-```
+struct Vertex
+{
+	float coords[4];
+	float colors[4];
+};
 
+const int MAP_SIZE = 33;  //define mesh size
+static Vertex waterVertices[MAP_SIZE*MAP_SIZE] = {};
+
+const int numStripsRequired = MAP_SIZE - 1;
+const int verticesPerStrip = 2 * MAP_SIZE;
+unsigned int waterIndexData[numStripsRequired][verticesPerStrip];
+
+int i = 0;
+
+	for (int z = 0; z < MAP_SIZE; z++)
+	{
+		for (int x = 0; x < MAP_SIZE; x++)
+		{
+			// y value is the height value (set to 0.0) // second part is color value
+			waterVertices[i] = { { (float)x, 0.0, (float)z, 1.0 }, { 0.0, 0.0, 0.0, 1.0 } };
+			i++;
+		}
+	}
+	
+	// Now build the index data
+	i = 0;
+	for (int z = 0; z < MAP_SIZE - 1; z++)
+	{
+		i = z * MAP_SIZE;
+		for (int x = 0; x < MAP_SIZE * 2; x += 2)
+		{
+			waterIndexData[z][x] = i;
+			i++;
+		}
+		for (int x = 1; x < MAP_SIZE * 2 + 1; x += 2)
+		{
+			waterIndexData[z][x] = i;
+			i++;
+		}
+	}
+```
  
 ## Terran Texture
 
@@ -45,31 +83,7 @@ You need to change fragment shader codes to include texture. For example
 
 ![TerrainTex picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207/Readme%20Pictures/TerrainTexture.JPG)
 
-## Multiple textures
 
-The multiple textures can be applied to the terrain so that different height levels have different colors.
-For low level close to water, it will be sandy color. The color in the highest level is white (snow color).
-So, you just import multiple texture maps in the C++ program and add texture colors into fragment shader. 
- 
-```C++
-	if(height <= -4.5f)
-	{
-		textureMap = texture(sandTexture, texCoordsExport);
-	}
-	else if(height <= -3.5f)
-	{
-		float diff = -3.5f - height; // a value between 0, 1
-		textureMap = (texture(sandTexture, texCoordsExport) * diff) + (texture(grassTexture, texCoordsExport) * (1-diff));
-	}
-	else if(height <= 8.5f)
-	{
-		textureMap = texture(grassTexture, texCoordsExport);
-	}
-	else
-	{
-		textureMap = texture(snowTexture, texCoordsExport);
-	}
-```
 
 
 
