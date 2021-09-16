@@ -190,9 +190,17 @@ void main(void)
 
 The instruction for lab task can be found in _"Workshop 7 Instructions.pdf"_.
 
+You need to add texture import codes in the C++ program. The texture tutorials can be found in
+https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/tree/master/Session%204
+
+You need to change fragment shader codes to include texture. For example 
 ```C++
-	h1 = (rand() % 10) / 5.0 - 1.0;
+	fieldTexColor = texture(grassTex, texCoordsExport);
+	//final color is combination of diffuse color and texture color
+   colorsExport = fAndBDif*fieldTexColor;
 ```
+
+![TerrainTex picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207/Readme%20Pictures/TerrainTexture.JPG)
 
 ## Multiple textures
 
