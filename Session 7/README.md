@@ -197,14 +197,16 @@ You need to change fragment shader codes to include texture. For example
 ```C++
 	fieldTexColor = texture(grassTex, texCoordsExport);
 	//final color is combination of diffuse color and texture color
-   colorsExport = fAndBDif*fieldTexColor;
+	colorsExport = fAndBDif*fieldTexColor;
 ```
 
 ![TerrainTex picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207/Readme%20Pictures/TerrainTexture.JPG)
 
 ## Multiple textures
 
-The instruction for lab task can 
+The multiple textures can be applied to the terrain so that different height levels have different colors.
+For low level close to water, it will be sandy color. The color in the highest level is white (snow color).
+ 
 
 
 
