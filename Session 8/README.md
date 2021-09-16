@@ -14,61 +14,20 @@ https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/tree/master/Session%
 
 ## Animated Water
 
-The wireframe of terrain need to be added light effects. The instruction can be found in "Workshop 7 Instructions.pdf". 
+Animated water tutorial using a imported mesh can be found in
 
-The final result of lighting should look like this
+https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/tree/master/Session%209
 
-![TerrainLight picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207/Readme%20Pictures/TerrainLight.JPG)
+However, in this coursework, procedurally generated water is required. So, imported water mesh is not allow.
 
-The vertex shader codes are standard codes for importing terrain mesh data from C++ program.
+To create a water mesh from scratch, we can use terrain mesh codes to create a flat large mesh object. 
+Here is some example codes.
 
 ```C++
 elViewMat * terrainCoords;
 }
 ```
 
-The fragment shader involve diffuse light calculation
-
-```C++
-#version 430 core
-
-in vec3 normalExport;
-
-out vec4 colorsExport;
-
-struct Light
-{
-   vec4 ambCols;
-   vec4 difCols;
-   vec4 specCols;
-   vec4 coords;
-};
-uniform Light light0;
-
-uniform vec4 globAmb;
-  
-struct Material
-{
-   vec4 ambRefl;
-   vec4 difRefl;
-   vec4 specRefl;
-   vec4 emitCols;
-   float shininess;
-};
-uniform Material terrainFandB;
-
-vec3 normal, lightDirection;
-vec4 fAndBDif;
-
-void main(void)
-{
-   normal = normalize(normalExport);
-   lightDirection = normalize(vec3(light0.coords));
-   fAndBDif = max(dot(normal, lightDirection), 0.0f) * (light0.difCols *
-   terrainFandB.difRefl); 
-   colorsExport =  vec4(vec3(min(fAndBDif, vec4(1.0))), 1.0);  
-}
-```
  
 ## Terran Texture
 
