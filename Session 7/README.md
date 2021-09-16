@@ -209,7 +209,7 @@ For low level close to water, it will be sandy color. The color in the highest l
 So, you just import multiple texture maps in the C++ program and add texture colors into fragment shader. 
  
 ```C++
-if(height <= -4.5f)
+	if(height <= -4.5f)
 	{
 		textureMap = texture(sandTexture, texCoordsExport);
 	}
