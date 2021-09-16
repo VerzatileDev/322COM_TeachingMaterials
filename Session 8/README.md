@@ -4,7 +4,7 @@
 1. [Camera and Skybox](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%208#Camera-and-Skybox)
 2. [Animated Water](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%208#Animated-Water)
 3. [Terran Texture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%208#Terran-Texture)
-4. [Multiple textures](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%208#Multiple-textures)
+4. [2D Fractal Tree](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%208#2D-Fractal-Tree)
 
 ## Camera and Skybox
 
@@ -67,21 +67,16 @@ int i = 0;
 	}
 ```
  
-## Terran Texture
+## 2D Fractal Tree
 
-The instruction for lab task can be found in _"Workshop 7 Instructions.pdf"_.
+The instruction for lab task can be found in _"Workshop 8A Instructions.pdf"_.
 
 You need to add texture import codes in the C++ program. The texture tutorials can be found in
 https://github.coventry.ac.uk/ac7020/212CR_TeachingMaterial/tree/master/Session%204
 
-You need to change fragment shader codes to include texture. For example 
-```C++
-	fieldTexColor = texture(grassTex, texCoordsExport);
-	//final color is combination of diffuse color and texture color
-	colorsExport = fAndBDif*fieldTexColor;
-```
+Final result look like this:
 
-![TerrainTex picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207/Readme%20Pictures/TerrainTexture.JPG)
+![Tree picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%208/Readme%20Pictures/Tree.JPG)
 
 
 
