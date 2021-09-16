@@ -4,7 +4,7 @@
 1. [Terran generation solution](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207#Terran-generation-solution)
 2. [Lighting](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207#Lighting)
 3. [Terran Texture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207#Terran-Texture)
-4. [Change camera](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207#Change-camera)
+4. [Multiple textures](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207#Multiple-textures)
 
 ## Terran generation solution
 
@@ -194,9 +194,9 @@ The instruction for lab task can be found in _"Workshop 7 Instructions.pdf"_.
 	h1 = (rand() % 10) / 5.0 - 1.0;
 ```
 
+## Multiple textures
 
-
-
+The instruction for lab task can 
 
 
 
