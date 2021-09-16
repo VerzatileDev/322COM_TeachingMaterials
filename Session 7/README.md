@@ -108,7 +108,7 @@ The wireframe of terrain need to be added light effects. The instruction can be 
 
 The final result of lighting should look like this
 
-![TerrainLight picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206/Readme%20Pictures/TerrainLight.JPG)
+![TerrainLight picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207/Readme%20Pictures/TerrainLight.JPG)
  
 ## Terran generation
 
@@ -122,7 +122,6 @@ Hint: The random function with range from -1 to 1 should be expressed as
 
 The final result should like this:
 
-![Finalresult picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206/Readme%20Pictures/Terran.JPG)
 
 
 
