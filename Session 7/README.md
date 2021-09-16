@@ -8,7 +8,8 @@
 
 ## Terran generation solution
 
-If you have trouble to implement Diamend-Square algorithm. Here is the function codes.
+If you have trouble to implement Diamend-Square algorithm. Here is the function codes. 
+In the while loop, there are diamond step, then followed by first square step and other three quare steps.
 
 
 ```C++
@@ -103,9 +104,11 @@ The completed solution can be found in TerrainGeneration.cpp.
 
 ## Lighting
 
-The wireframe of terrain need to be added light effects. 
+The wireframe of terrain need to be added light effects. The instruction can be found in "Workshop 7 Instructions.pdf". 
 
-![baseProject picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206/Readme%20Pictures/TerranFlat.JPG)
+The final result of lighting should look like this
+
+![TerrainLight picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206/Readme%20Pictures/TerrainLight.JPG)
  
 ## Terran generation
 
