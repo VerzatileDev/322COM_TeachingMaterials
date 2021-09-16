@@ -3,8 +3,8 @@
 #### Table of Contents
 1. [Terran generation solution](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207#Terran-generation-solution)
 2. [Lighting](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207#Lighting)
-3. [Change models](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206#Change-models)
-4. [Change camera](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206#Change-camera)
+3. [Terran Texture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207#Terran-Texture)
+4. [Change camera](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207#Change-camera)
 
 ## Terran generation solution
 
@@ -109,18 +109,92 @@ The wireframe of terrain need to be added light effects. The instruction can be 
 The final result of lighting should look like this
 
 ![TerrainLight picture](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%207/Readme%20Pictures/TerrainLight.JPG)
+
+The vertex shader codes are standard codes for importing terrain mesh data from C++ program.
+
+```C++
+#version 420 core
+
+layout(location=0) in vec4 terrainCoords;
+layout(location=1) in vec3 terrainNormals;
+
+struct Material
+{
+vec4 ambRefl;
+vec4 difRefl;
+vec4 specRefl;
+vec4 emitCols;
+float shininess;
+};
+
+uniform vec4 globAmb;
+uniform mat4 projMat;
+uniform mat4 modelViewMat;
+uniform mat3 normalMat;
+
+out vec3 normalExport;
+
+void main(void)
+{
+   normalExport = terrainNormals;
+   normalExport = normalize(normalMat * normalExport);
+   
+   gl_Position = projMat * modelViewMat * terrainCoords;
+}
+```
+
+The fragment shader involve diffuse light calculation
+
+```C++
+#version 430 core
+
+in vec3 normalExport;
+
+out vec4 colorsExport;
+
+struct Light
+{
+   vec4 ambCols;
+   vec4 difCols;
+   vec4 specCols;
+   vec4 coords;
+};
+uniform Light light0;
+
+uniform vec4 globAmb;
+  
+struct Material
+{
+   vec4 ambRefl;
+   vec4 difRefl;
+   vec4 specRefl;
+   vec4 emitCols;
+   float shininess;
+};
+uniform Material terrainFandB;
+
+vec3 normal, lightDirection;
+vec4 fAndBDif;
+
+void main(void)
+{
+   normal = normalize(normalExport);
+   lightDirection = normalize(vec3(light0.coords));
+   fAndBDif = max(dot(normal, lightDirection), 0.0f) * (light0.difCols *
+   terrainFandB.difRefl); 
+   colorsExport =  vec4(vec3(min(fAndBDif, vec4(1.0))), 1.0);  
+}
+```
  
-## Terran generation
+## Terran Texture
 
-The instruction for lab task can be found in _"Workshop 6B Instructions.pdf"_.
-
-Hint: The random function with range from -1 to 1 should be expressed as
+The instruction for lab task can be found in _"Workshop 7 Instructions.pdf"_.
 
 ```C++
 	h1 = (rand() % 10) / 5.0 - 1.0;
 ```
 
-The final result should like this:
+
 
 
 
