@@ -212,6 +212,7 @@ This section is advanced level so it is optional.
 To render more complex shapes e.g. teapot you will need to be able to load a mesh from a file and
 render each of its triangles. A simple mesh loader (OBJloader.h) written in C++ can be downloaded from Week 2 folder.
 Note this code is limited to only loading meshes of file type OBJ. 
+For using OBJloader.h, you also need to add Vertex.h and GLEW libary header (glew.h) into the project.
 
 The mesh loader handle the import of OBJ file is inside the header file : OBJloader.h.
 This is a head file only library. It is a simplified version of Bly7 OBJ Loader library ( https://github.com/Bly7/OBJ-Loader  ).
