@@ -3,8 +3,6 @@
 #### Table of Contents
 1. [Base project](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206#Base-project)
 2. [Terran generation](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206#Terran-generation)
-3. [Change models](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206#Change-models)
-4. [Change camera](https://github.coventry.ac.uk/ac7020/322COM_TeachingMaterial/blob/master/Session%206#Change-camera)
 
 ## Base project
 
