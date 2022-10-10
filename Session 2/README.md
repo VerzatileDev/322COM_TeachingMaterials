@@ -217,7 +217,7 @@ For using OBJloader.h, you also need to add Vertex.h and GLEW libary header (gle
 The mesh loader handle the import of OBJ file is inside the header file : OBJloader.h.
 This is a head file only library. It is a simplified version of Bly7 OBJ Loader library ( https://github.com/Bly7/OBJ-Loader  ).
 
-Examples of a cube and a teapot OBJ files can also be downloaded from week 2.
+Examples of a house and a pig OBJ files can also be downloaded from week 2.
 
 ## Example of mesh class
 
